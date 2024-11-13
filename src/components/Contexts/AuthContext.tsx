@@ -7,7 +7,7 @@ import { myInfoAPI, signInAPI } from "../../utils/api";
 const AuthContext = ({children}: AuthContextProps) => {
     const [user, setUser] = useState<unknown>({})
     const [userLoading, setUserLoading] = useState<boolean>(true)
-
+ 
     useEffect(()=> {
         (
             async () => {
@@ -20,8 +20,8 @@ const AuthContext = ({children}: AuthContextProps) => {
                         setUser({});                
                         Cookies.remove('accessToken');
                     }
-                } catch (err : unknown) {
-                    console.log(err?.message);
+                } catch (err : unknown ) {
+                    console.log(err);
                     Cookies.remove('accessToken');
                     setUser({})
                 } finally {

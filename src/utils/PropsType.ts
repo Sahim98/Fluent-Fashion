@@ -9,3 +9,7 @@ export type AuthContextProps = {
     children: React.ReactNode
 }
 
+export type InfoContextProps = {
+    children: React.ReactNode
+}
+

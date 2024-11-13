@@ -1,16 +1,17 @@
-import AuthContext from "./components/Contexts/AuthContext"
-import Footer from "./components/Footer/Footer"
+
+import { Outlet } from "react-router-dom"
 import Header from "./components/Header/Header"
-import { useTitle } from "./utils/hooks"
+import Footer from "./components/Footer/Footer"
 
 
 function App() {
-  useTitle("Home")
   return (
-    <AuthContext>
-    <Header/>
-    <Footer/>
-    </AuthContext>
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  
   )
 }
 
