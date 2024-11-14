@@ -14,6 +14,14 @@ export const useBrowserInfo = () => {
     const [height, setHeight] = useState<number>(window.innerHeight);
     const [width, setWidth] = useState<number>(window.innerWidth);
     const [scrollY, setScrollY] = useState<number>(window.scrollY);
+    const [safeAreaHeight, setSafeAreaWidth] = useState<number>(window.innerHeight)
+
+    useEffect(() => {
+      const temp = (document as any).getElementById("header")?.offsetHeight + (document as any).getElementById("footer")?.offsetHeight || 0
+      setSafeAreaWidth(height - temp)
+    }, [height])
+    
+
     useEffect(() => {
       const handleResize = () => {
         setWidth(window.innerWidth);
@@ -36,7 +44,8 @@ export const useBrowserInfo = () => {
     return {
       height,
       width,
-      scrollY
+      scrollY,
+      safeAreaHeight
     };
   };
 
