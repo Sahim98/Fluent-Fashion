@@ -5,6 +5,7 @@ import { UserContext } from "./variables"
 // get user related data from context 
 export const useUser = () => {
     const data = useContext(UserContext)
+   // console.log(data._id)
     return data
 }
 
