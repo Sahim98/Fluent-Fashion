@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios'; // Assuming you're using Axios for requests
-import { BACKEND_URL } from '../../utils/variables';
+import { useState } from 'react';
+import axios from 'axios'; 
+import { signUpAPI } from '../../utils/api';
+
 const SignUp = () => {
   const [formData, setFormData] = useState({
     full_name: '',
@@ -25,7 +26,7 @@ const SignUp = () => {
     console.log(formData); 
     try {
       const response = await axios.post(
-        `https://${BACKEND_URL}/api/v1/auth/sign-up`,
+        signUpAPI,
         formData
       );
       console.log('Signup successful:', response.data);
