@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTitle } from '../../utils/hooks'
 
 const ProfilePage = () => {
